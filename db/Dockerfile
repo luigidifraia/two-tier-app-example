@@ -1,0 +1,5 @@
+FROM postgres:10-alpine
+
+ENV POSTGRES_USER scientist
+ENV POSTGRES_PASSWORD C473rp1ll4r
+ENV POSTGRES_DB datascience
