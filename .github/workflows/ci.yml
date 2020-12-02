@@ -1,10 +1,17 @@
-name: Run on demand
+name: CI
 
 # Controls when the action will run
 on:
-  # Triggers the workflow whenever the comment "OK to test" is added in a PR (which is internally seen as a type of issue by GitHub)
-  issue_comment:
-    types: [created, edited]
+  # Triggers the workflow on push or pull request events but only for the main branch
+  push:
+    branches: 
+     - main
+  pull_request:
+    branches: 
+     - main
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -12,8 +19,6 @@ jobs:
   ondemand:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
-
-    if: github.event.comment.body == 'OK to test'
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
