@@ -23,7 +23,7 @@ jobs:
 
       # Creates a .env file from the example one
       -  name: Create environment file
-         run: cp .env.example .env
+         run: cp ./.env.example ./.env
 
       # Runs docker-compose using the runners shell
       - name: Build and start
