@@ -13,7 +13,7 @@ user = os.getenv("POSTGRES_USER", "scientist")
 password = os.getenv("POSTGRES_PASSWORD", "C473rp1ll4r")
 host = os.getenv("POSTGRES_HOST", "db")
 port = os.getenv("POSTGRES_PORT", "5432")
-database = os.getenv("POSTGRES_DATABASE", "datascience")
+database = os.getenv("POSTGRES_DB", "datascience")
 
 try:
     connection = psycopg2.connect(user = user,
