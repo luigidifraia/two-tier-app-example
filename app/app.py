@@ -3,6 +3,7 @@
 import os
 import logging
 import psycopg2
+import time
 
 level = os.getenv("LOGLEVEL", "INFO").upper()
 logging.basicConfig(format="%(asctime)s %(levelname)-8s %(name)s %(message)s", datefmt="%Y-%m-%d %H:%M:%S", level=level)
@@ -32,7 +33,7 @@ try:
     record = cursor.fetchone()
     logger.info("You are connected to {}\n".format(record))
 
-except (Exception, psycopg2.Error, psycopg2.OperationalError) as error :
+except (Exception, psycopg2.Error, psycopg2.OperationalError) as error:
     logger.error("Error while connecting to PostgreSQL: {}".format(error))
 
 else:
@@ -40,3 +41,5 @@ else:
     cursor.close()
     connection.close()
     logger.info("PostgreSQL connection was closed")
+
+time.sleep(10)
