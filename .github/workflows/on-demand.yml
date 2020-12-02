@@ -21,10 +21,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      # Creates a .env file from the example one
-      -  name: Create environment file
-         run: cp ./.env.example ./.env
-
       # Runs docker-compose using the runners shell
       - name: Build and start
         run: docker-compose up -d app
