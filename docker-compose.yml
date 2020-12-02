@@ -9,8 +9,12 @@ services:
     depends_on:
       - "db"
     command: ["/usr/src/app/wait-for", "db:5432", "--", "python", "app.py"]
+    restart: always
 
   db:
     image: postgres:10-alpine
     env_file:
       - ./.env
+    volumes:
+      - ./data:/var/lib/postgresql/data
+    restart: always
