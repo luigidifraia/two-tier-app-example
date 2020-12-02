@@ -4,12 +4,6 @@ Example to show how to control the order of service startup with Docker Compose.
 
 # TL;DR
 
-Create a .env file and customize its contents:
-
-```base
-cp .env.example .env
-```
-
 Start both services with:
 
 ```bash
